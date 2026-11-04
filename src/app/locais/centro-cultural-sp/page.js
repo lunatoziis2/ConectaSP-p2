@@ -2,12 +2,39 @@
 
 import Link from "next/link";
 import styles from "@/styles/Local.module.css";
+import RecursosAcessibilidade from '../../components/RecursosAcessibilidade';
 
 export const metadata = {
   title: "Centro Cultural São Paulo - ConectaSP",
 };
 
 export default function CentroCulturalSP() {
+
+  const recursosCCSP = [
+    {
+      nome: "Acessibilidade física",
+      itens: [
+        "Espaço aberto, integrado e sem barreiras",
+        "Acesso direto pela rampa da Estação Vergueiro",
+        "Áreas de circulação e convivência"
+      ]
+    },
+    {
+      nome: "Acessibilidade visual",
+      itens: [
+        "Livros falados",
+        "Computadores adaptados",
+        "Biblioteca Louis Braille"
+      ]
+    },
+    {
+      nome: "Acessibilidade auditiva",
+      itens: [
+        "Programações com recursos de Libras"
+      ]
+    }
+  ];
+
   return (
     <>
       <header className={styles.cabecalho}>
@@ -54,36 +81,7 @@ export default function CentroCulturalSP() {
             <p>(11) 3397-4002</p>
           </article>
         </section>
-
-        <section id="acessibilidade" className={styles.acessibilidade}>
-          <h2>Recursos de acessibilidade disponíveis</h2>
-          <div className={styles.recursos}>
-            <article className={styles.recurso}>
-              <h3>Acessibilidade física</h3>
-              <ul>
-                <li>Espaço aberto, integrado e sem barreiras</li>
-                <li>Acesso direto pela rampa da Estação Vergueiro</li>
-                <li>Áreas de circulação e convivência</li>
-              </ul>
-              <button type="button" className={styles.verMais}>Ver mais recursos</button>
-            </article>
-            <article className={styles.recurso}>
-              <h3>Acessibilidade visual</h3>
-              <ul>
-                <li>Livros falados</li>
-                <li>Computadores adaptados</li>
-                <li>Biblioteca Louis Braille</li>
-              </ul>
-              <button type="button" className={styles.verMais}>Ver mais recursos</button>
-            </article>
-            <article className={styles.recurso}>
-              <h3>Acessibilidade auditiva</h3>
-              <ul>
-                <li>Programações com recursos de Libras</li>
-              </ul>
-            </article>
-          </div>
-        </section>
+        <RecursosAcessibilidade categorias={recursosCCSP} />
       </main>
     </>
   );

@@ -5,7 +5,6 @@
 import { useState } from "react";
 import styles from "@/styles/Local.module.css";
 
-export default function RecursosAcessibilidade({ titulo = "Recursos de acessibilidade disponíveis", categorias }) {
   return (
     <section id="acessibilidade" className={styles.acessibilidade}>
       <h2>{titulo}</h2>

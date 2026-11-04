@@ -2,12 +2,44 @@
 
 import Link from "next/link";
 import styles from "@/styles/Local.module.css";
+import RecursosAcessibilidade from '../../components/RecursosAcessibilidade';
 
 export const metadata = {
   title: "Centro Cultural Banco do Brasil - ConectaSP",
 };
 
 export default function CCBB() {
+
+  const recursosCCBB = [
+    {
+      nome: "Acessibilidade física",
+      itens: [
+        "Cadeiras de rodas disponíveis para utilização dos visitantes",
+        "Rampas e rotas acessíveis, elevadores",
+        "Banheiros acessíveis",
+        "Estacionamento acessível",
+        "Bebedouros acessíveis"
+      ]
+    },
+    {
+      nome: "Acessibilidade visual",
+      itens: [
+        "Mapas táteis",
+        "Plataforma elevatória",
+        "Piso tátil",
+        "Informações em braile"
+      ]
+    },
+    {
+      nome: "Acessibilidade auditiva",
+      itens: [
+        "Audiodescrição",
+        "Intérprete de Libras (eventos)",
+        "Sessões especiais com interpretação em Libras e recursos como legendas/closed caption"
+      ]
+    }
+  ];
+
   return (
     <>
       <header className={styles.cabecalho}>
@@ -52,45 +84,7 @@ export default function CCBB() {
             <p>(11) 4297-0600</p>
           </article>
         </section>
-
-        <section id="acessibilidade" className={styles.acessibilidade}>
-          <h2>Possui total acessibilidade</h2>
-          <div className={styles.recursos}>
-            <article className={styles.recurso}>
-              <h3>Acessibilidade física</h3>
-              <ul>
-                <li>Cadeiras de rodas disponíveis para utilização dos visitantes.</li>
-                <li>Rampas e rotas acessíveis, elevadores</li>
-                <li>Banheiros acessíveis</li>
-                <li>Estacionamento acessível</li>
-                <li>Bebedouros acessíveis</li>
-              </ul>
-              <button type="button" className={styles.verMais}>Ver mais recursos</button>
-            </article>
-            <article className={styles.recurso}>
-              <h3>Acessibilidade visual</h3>
-              <ul>
-                <li>Mapas táteis</li>
-                <li>Plataforma elevatória</li>
-                <li>Piso tátil</li>
-                <li>Informações em braile</li>
-              </ul>
-              <button type="button" className={styles.verMais}>Ver mais recursos</button>
-            </article>
-            <article className={styles.recurso}>
-              <h3>Acessibilidade auditiva</h3>
-              <ul>
-                <li>Audiodescrição</li>
-                <li>Intérprete de Libras (eventos)</li>
-                <li>
-                  há sessões especiais com interpretação em Libras
-                  e recursos como legendas/closed caption em determinadas atividades.
-                </li>
-              </ul>
-              <button type="button" className={styles.verMais}>Ver mais recursos</button>
-            </article>
-          </div>
-        </section>
+        <RecursosAcessibilidade titulo="Possui total acessibilidade" categorias={recursosCCBB} />
       </main>
     </>
   );

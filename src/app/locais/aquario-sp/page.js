@@ -2,12 +2,39 @@
 
 import Link from "next/link";
 import styles from "@/styles/Local.module.css";
+import RecursosAcessibilidade from '../../components/RecursosAcessibilidade';
 
 export const metadata = {
   title: "Aquário de São Paulo - ConectaSP",
 };
 
 export default function AquarioSP() {
+
+  const recursosAquario = [
+    {
+      nome: "Acessibilidade física",
+      itens: [
+        "Rampas e rotas acessíveis",
+        "Banheiros acessíveis",
+        "Estacionamento acessível",
+        "Bebedouros acessíveis"
+      ]
+    },
+    {
+      nome: "Acessibilidade visual",
+      itens: [
+        "Piso tátil",
+        "Informações em braile"
+      ]
+    },
+    {
+      nome: "Acessibilidade auditiva",
+      itens: [
+        "Legendas em vídeos"
+      ]
+    }
+  ];
+
   return (
     <>
       <header className={styles.cabecalho}>
@@ -52,35 +79,7 @@ export default function AquarioSP() {
             <p>(11) 2273-5500</p>
           </article>
         </section>
-
-        <section id="acessibilidade" className={styles.acessibilidade}>
-          <h2>Recursos de acessibilidade disponíveis</h2>
-          <div className={styles.recursos}>
-            <article className={styles.recurso}>
-              <h3>Acessibilidade física</h3>
-              <ul>
-                <li>Rampas e rotas acessíveis</li>
-                <li>Banheiros acessíveis</li>
-                <li>Estacionamento acessível</li>
-                <li>Bebedouros acessíveis</li>
-              </ul>
-              <button type="button" className={styles.verMais}>Ver mais recursos</button>
-            </article>
-            <article className={styles.recurso}>
-              <h3>Acessibilidade visual</h3>
-              <ul>
-                <li>Piso tátil</li>
-                <li>Informações em braile</li>
-              </ul>
-            </article>
-            <article className={styles.recurso}>
-              <h3>Acessibilidade auditiva</h3>
-              <ul>
-                <li>Legendas em vídeos</li>
-              </ul>
-            </article>
-          </div>
-        </section>
+        <RecursosAcessibilidade categorias={recursosAquario} />
       </main>
     </>
   );
