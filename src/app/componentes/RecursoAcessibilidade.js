@@ -2,9 +2,15 @@
 
 "use client";
 
-import { useState } from "react";
+import { useId, useState } from "react";
 import styles from "@/styles/Local.module.css";
 
+const LIMITE_INICIAL = 2;
+
+export default function RecursosAcessibilidade({
+  titulo = "Recursos de acessibilidade",
+  categorias = [],
+}) {
   return (
     <section id="acessibilidade" className={styles.acessibilidade}>
       <h2>{titulo}</h2>
@@ -19,22 +25,33 @@ import styles from "@/styles/Local.module.css";
 
 function CategoriaRecurso({ categoria }) {
   const [expandido, setExpandido] = useState(false);
-  const itensVisiveis = expandido ? categoria.itens : categoria.itens.slice(0, 2);
+  const listaId = useId();
+
+  const temMais = categoria.itens.length > LIMITE_INICIAL;
+  const itensVisiveis = expandido
+    ? categoria.itens
+    : categoria.itens.slice(0, LIMITE_INICIAL);
 
   return (
     <article className={styles.recurso}>
       <h3>{categoria.nome}</h3>
-      <ul>
+      <ul id={listaId}>
         {itensVisiveis.map((item, indice) => (
           <li key={`${categoria.nome}-${indice}`}>{item}</li>
         ))}
       </ul>
-      {categoria.itens.length > 2 && (
+      {temMais && (
         <button
           type="button"
           className={styles.verMais}
-          onClick={() => setExpandido(!expandido)}
+          onClick={() => setExpandido((atual) => !atual)}
           aria-expanded={expandido}
+          aria-controls={listaId}
+          aria-label={
+            expandido
+              ? `Ver menos recursos de ${categoria.nome}`
+              : `Ver mais recursos de ${categoria.nome}`
+          }
         >
           {expandido ? "Ver menos recursos" : "Ver mais recursos"}
         </button>

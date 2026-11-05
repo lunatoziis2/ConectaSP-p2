@@ -2,14 +2,13 @@
 
 import Link from "next/link";
 import styles from "@/styles/Local.module.css";
-import RecursosAcessibilidade from '../../components/RecursosAcessibilidade';
+import RecursosAcessibilidade from "../../components/RecursosAcessibilidade";
 
 export const metadata = {
   title: "Centro Cultural Banco do Brasil - ConectaSP",
 };
 
 export default function CCBB() {
-
   const recursosCCBB = [
     {
       nome: "Acessibilidade física",
@@ -18,8 +17,8 @@ export default function CCBB() {
         "Rampas e rotas acessíveis, elevadores",
         "Banheiros acessíveis",
         "Estacionamento acessível",
-        "Bebedouros acessíveis"
-      ]
+        "Bebedouros acessíveis",
+      ],
     },
     {
       nome: "Acessibilidade visual",
@@ -27,17 +26,17 @@ export default function CCBB() {
         "Mapas táteis",
         "Plataforma elevatória",
         "Piso tátil",
-        "Informações em braile"
-      ]
+        "Informações em braile",
+      ],
     },
     {
       nome: "Acessibilidade auditiva",
       itens: [
         "Audiodescrição",
         "Intérprete de Libras (eventos)",
-        "Sessões especiais com interpretação em Libras e recursos como legendas/closed caption"
-      ]
-    }
+        "Sessões especiais com interpretação em Libras e recursos como legendas/closed caption",
+      ],
+    },
   ];
 
   return (
@@ -57,34 +56,50 @@ export default function CCBB() {
             <h1>Centro Cultural Banco do Brasil São Paulo</h1>
             <p className={styles.localizacao}>São Paulo, Centro</p>
             <p>
-              O Centro Cultural Banco do Brasil São Paulo, também conhecido como CCBB São Paulo,
-              foi inaugurado em 21 de abril de 2001, no centro histórico da cidade.
+              O Centro Cultural Banco do Brasil São Paulo, também conhecido como
+              CCBB São Paulo, foi inaugurado em 21 de abril de 2001, no centro
+              histórico da cidade.
             </p>
           </article>
           <figure className={styles.imagemLocal}>
-            <img src="/imagens/conectasp_ccbb.png" alt="Centro Cultural Banco do Brasil São Paulo" />
+            <img
+              src="/imagens/conectasp_ccbb.png"
+              alt="Centro Cultural Banco do Brasil São Paulo"
+            />
           </figure>
         </section>
 
         <section className={styles.informacoes}>
           <article className={styles.informacao}>
             <h3>Endereço</h3>
-            <p>R. Álvares Penteado, 112 - Centro Histórico de São Paulo, São Paulo - SP, 01012-000</p>
+            <p>
+              R. Álvares Penteado, 112 - Centro Histórico de São Paulo, São
+              Paulo - SP, 01012-000
+            </p>
           </article>
           <article className={styles.informacao}>
             <h3>Horário</h3>
-            <p>de quarta a segunda-feira, das 10h às 18h, e fica fechada às terças-feiras<br />Até as 18:00h</p>
+            <p>
+              Quarta a segunda-feira
+              <br />
+              10h às 18h
+            </p>
+            <p>Fechado às terças-feiras</p>
           </article>
           <article className={styles.informacao}>
             <h3>Entrada</h3>
-            <p>todos os dias, das 9h às 20h, exceto às terças-feiras, quando permanece fechado.</p>
+            <p>Gratuita</p>
           </article>
           <article className={styles.informacao}>
             <h3>Contato</h3>
             <p>(11) 4297-0600</p>
           </article>
         </section>
-        <RecursosAcessibilidade titulo="Possui total acessibilidade" categorias={recursosCCBB} />
+
+        <RecursosAcessibilidade
+          titulo="Recursos de acessibilidade"
+          categorias={recursosCCBB}
+        />
       </main>
     </>
   );

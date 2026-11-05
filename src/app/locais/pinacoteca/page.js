@@ -2,15 +2,14 @@
 
 import Link from "next/link";
 import styles from "@/styles/Local.module.css";
-import RecursosAcessibilidade from '../../components/RecursosAcessibilidade';
+import RecursosAcessibilidade from "../../components/RecursosAcessibilidade";
 
 export const metadata = {
   title: "Pinacoteca de São Paulo - ConectaSP",
 };
 
 export default function Pinacoteca() {
-
-    const recursosPinacoteca = [
+  const recursosPinacoteca = [
     {
       nome: "Acessibilidade física",
       itens: [
@@ -19,8 +18,8 @@ export default function Pinacoteca() {
         "Banheiros acessíveis",
         "Estacionamento acessível",
         "Bebedouros acessíveis",
-        "Programa Educativo para Pessoas com Deficiência"
-      ]
+        "Programa Educativo para Pessoas com Deficiência",
+      ],
     },
     {
       nome: "Acessibilidade visual",
@@ -30,17 +29,17 @@ export default function Pinacoteca() {
         "Audiodescrição",
         "Piso tátil",
         "Informações em braile",
-        "Cão-guia"
-      ]
+        "Cão-guia",
+      ],
     },
     {
       nome: "Acessibilidade auditiva",
       itens: [
         "Intérprete de Libras (eventos)",
         "Legendas em vídeos",
-        "Abafadores de ruído gratuitos"
-      ]
-    }
+        "Abafadores de ruído gratuitos",
+      ],
+    },
   ];
 
   return (
@@ -59,39 +58,54 @@ export default function Pinacoteca() {
           <article className={styles.textoLocal}>
             <h1>Pinacoteca de São Paulo</h1>
             <p className={styles.localizacao}>Luz, São Paulo</p>
-            <p>Um dos mais importantes museus de arte do Brasil e o mais antigo do estado de São Paulo.</p>
+            <p>
+              Um dos mais importantes museus de arte do Brasil e o mais antigo
+              do estado de São Paulo.
+            </p>
           </article>
           <figure className={styles.imagemLocal}>
-            <img src="/imagens/conectasp_pinacoteca.png" alt="Pinacoteca de São Paulo" />
+            <img
+              src="/imagens/conectasp_pinacoteca.png"
+              alt="Pinacoteca de São Paulo"
+            />
           </figure>
         </section>
 
         <section className={styles.informacoes}>
           <article className={styles.informacao}>
             <h3>Endereço</h3>
-            <p>Praça da Luz, 2 - Luz, São Paulo - SP, 01120-01</p>
+            <p>Praça da Luz, 2 - Luz, São Paulo - SP, 01120-010</p>
           </article>
           <article className={styles.informacao}>
             <h3>Horário</h3>
             <p>
-              de quarta a segunda-feira, das 10h às 18h (com entrada permitida até as 17h), e fica fechada às terças-feiras<br />Até as 18:00h
+              Quarta a segunda-feira
+              <br />
+              10h às 18h (entrada até as 17h)
             </p>
+            <p>Fechado às terças-feiras</p>
           </article>
           <article className={styles.informacao}>
             <h3>Entrada</h3>
             <p>
               Inteira: R$ 30,00
+              <br />
               Meia-entrada: R$ 15,00
-              Ingressos online: Valor do ingresso + R$ 2,00 de taxa
+              <br />
+              Ingressos online: valor do ingresso + R$ 2,00 de taxa
             </p>
-            <p>Aos sábados: A entrada é gratuita para todas as pessoas.</p>
+            <p>Aos sábados: entrada gratuita para todas as pessoas.</p>
           </article>
           <article className={styles.informacao}>
             <h3>Contato</h3>
             <p>(11) 3324-1000</p>
           </article>
         </section>
-        <RecursosAcessibilidade categorias={recursosPinacoteca} />
+
+        <RecursosAcessibilidade
+          titulo="Recursos de acessibilidade"
+          categorias={recursosPinacoteca}
+        />
       </main>
     </>
   );

@@ -2,37 +2,34 @@
 
 import Link from "next/link";
 import styles from "@/styles/Local.module.css";
-import RecursosAcessibilidade from '../../components/RecursosAcessibilidade';
+import RecursosAcessibilidade from "../../components/RecursosAcessibilidade";
 
 export const metadata = {
   title: "Centro Cultural São Paulo - ConectaSP",
 };
 
 export default function CentroCulturalSP() {
-
   const recursosCCSP = [
     {
       nome: "Acessibilidade física",
       itens: [
         "Espaço aberto, integrado e sem barreiras",
         "Acesso direto pela rampa da Estação Vergueiro",
-        "Áreas de circulação e convivência"
-      ]
+        "Áreas de circulação e convivência",
+      ],
     },
     {
       nome: "Acessibilidade visual",
       itens: [
         "Livros falados",
         "Computadores adaptados",
-        "Biblioteca Louis Braille"
-      ]
+        "Biblioteca Louis Braille",
+      ],
     },
     {
       nome: "Acessibilidade auditiva",
-      itens: [
-        "Programações com recursos de Libras"
-      ]
-    }
+      itens: ["Programações com recursos de Libras"],
+    },
   ];
 
   return (
@@ -52,25 +49,36 @@ export default function CentroCulturalSP() {
             <h1>Centro Cultural São Paulo</h1>
             <p className={styles.localizacao}>Zona Sul</p>
             <p>
-              O Centro Cultural São Paulo (CCSP) é um dos principais equipamentos
-              públicos de cultura da cidade de São Paulo, reunindo bibliotecas,
-              teatros, salas de exposição, cinemas, jardins e espaços de convivência
-              em um único complexo.
+              O Centro Cultural São Paulo (CCSP) é um dos principais
+              equipamentos públicos de cultura da cidade de São Paulo, reunindo
+              bibliotecas, teatros, salas de exposição, cinemas, jardins e
+              espaços de convivência em um único complexo.
             </p>
           </article>
           <figure className={styles.imagemLocal}>
-            <img src="/imagens/conectasp_centrosp.png" alt="Centro Cultural São Paulo" />
+            <img
+              src="/imagens/conectasp_centrosp.png"
+              alt="Centro Cultural São Paulo"
+            />
           </figure>
         </section>
 
         <section className={styles.informacoes}>
           <article className={styles.informacao}>
             <h3>Endereço</h3>
-            <p>Rua Vergueiro, 1000 - Liberdade,<br />São Paulo - SP, 01504-000</p>
+            <p>
+              Rua Vergueiro, 1000 - Liberdade,
+              <br />
+              São Paulo - SP, 01504-000
+            </p>
           </article>
           <article className={styles.informacao}>
             <h3>Horário</h3>
-            <p>Terça a domingo,<br />das 10h às 22h.</p>
+            <p>
+              Terça a domingo
+              <br />
+              10h às 22h
+            </p>
           </article>
           <article className={styles.informacao}>
             <h3>Entrada</h3>
@@ -81,7 +89,11 @@ export default function CentroCulturalSP() {
             <p>(11) 3397-4002</p>
           </article>
         </section>
-        <RecursosAcessibilidade categorias={recursosCCSP} />
+
+        <RecursosAcessibilidade
+          titulo="Recursos de acessibilidade"
+          categorias={recursosCCSP}
+        />
       </main>
     </>
   );

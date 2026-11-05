@@ -2,41 +2,33 @@
 
 import Link from "next/link";
 import styles from "@/styles/Local.module.css";
-import RecursosAcessibilidade from '../../components/RecursosAcessibilidade';
+import RecursosAcessibilidade from "../../components/RecursosAcessibilidade";
 
 export const metadata = {
   title: "Parque Ibirapuera - ConectaSP",
 };
 
 export default function ParqueIbirapuera() {
-    
-        const recursosIbirapuera = [
+  const recursosIbirapuera = [
     {
       nome: "Acessibilidade física",
       itens: [
         "Rampas e rotas acessíveis",
         "Banheiros acessíveis",
         "Estacionamento acessível",
-        "Bebedouros acessíveis"
-      ]
+        "Bebedouros acessíveis",
+      ],
     },
     {
       nome: "Acessibilidade visual",
-      itens: [
-        "Mapas táteis",
-        "Piso tátil",
-        "Informações em braile"
-      ]
+      itens: ["Mapas táteis", "Piso tátil", "Informações em braile"],
     },
     {
       nome: "Acessibilidade auditiva",
-      itens: [
-        "Intérprete de Libras (eventos)",
-        "Legendas em vídeos"
-      ]
-    }
+      itens: ["Intérprete de Libras (eventos)", "Legendas em vídeos"],
+    },
   ];
-  
+
   return (
     <>
       <header className={styles.cabecalho}>
@@ -53,7 +45,10 @@ export default function ParqueIbirapuera() {
           <article className={styles.textoLocal}>
             <h1>Parque Ibirapuera</h1>
             <p className={styles.localizacao}>Zona Sul</p>
-            <p>Um dos maiores e mais importantes parques urbanos do Brasil, com áreas de lazer, cultura e natureza.</p>
+            <p>
+              Um dos maiores e mais importantes parques urbanos do Brasil, com
+              áreas de lazer, cultura e natureza.
+            </p>
           </article>
           <figure className={styles.imagemLocal}>
             <img src="/imagens/conectasp_parque.png" alt="Parque Ibirapuera" />
@@ -63,11 +58,19 @@ export default function ParqueIbirapuera() {
         <section className={styles.informacoes}>
           <article className={styles.informacao}>
             <h3>Endereço</h3>
-            <p>Avenida Ibirapuera, 3103,<br />São Paulo, 04028-000</p>
+            <p>
+              Avenida Ibirapuera, 3103,
+              <br />
+              São Paulo, 04028-000
+            </p>
           </article>
           <article className={styles.informacao}>
             <h3>Horário</h3>
-            <p>Todos os dias<br />5h às 0h</p>
+            <p>
+              Todos os dias
+              <br />
+              5h às 0h
+            </p>
           </article>
           <article className={styles.informacao}>
             <h3>Entrada</h3>
@@ -78,7 +81,11 @@ export default function ParqueIbirapuera() {
             <p>(11) 5561-9606</p>
           </article>
         </section>
-        <RecursosAcessibilidade categorias={recursosIbirapuera} />
+
+        <RecursosAcessibilidade
+          titulo="Recursos de acessibilidade"
+          categorias={recursosIbirapuera}
+        />
       </main>
     </>
   );
