@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "@/styles/Local.module.css";
-import RecursosAcessibilidade from "../../components/RecursosAcessibilidade";
+import RecursosAcessibilidade from "../../componentes/RecursoAcessibilidade";
 
 export const metadata = {
   title: "Pinacoteca de São Paulo - ConectaSP",

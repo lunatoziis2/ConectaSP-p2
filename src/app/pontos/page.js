@@ -1,8 +1,8 @@
 /* Luna Tozi RA:10771378 / Millena Maurer RA:10771373 / Hellen Karoline RA:10771420 */
 
 import Link from "next/link";
-import styles from "@/styles/Pontos.module.css";
-import CardPonto from "@/app/components/CardPonto";
+import styles from "@/styles/Pontos.module.css"; 
+import CardPonto from "../componentes/CardPonto";
 
 export const metadata = {
   title: "Pontos Turísticos Acessíveis - ConectaSP",
