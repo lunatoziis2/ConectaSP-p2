@@ -26,54 +26,8 @@ export default function Pontos() {
           <h2>Escolha seu destino</h2>
         </section>
 
-        <section className={styles.listaPontos}>
-          {[
-            {
-              nome: "Aquário de São Paulo",
-              imagem: "/imagens/conectasp_aquariosp.png",
-              localizacao: "Zona Sul",
-              endereco: "/locais/aquario-sp",
-            },
-            {
-              nome: "Parque Ibirapuera",
-              imagem: "/imagens/conectasp_parque.png",
-              localizacao: "Zona Sul",
-              endereco: "/locais/parque-ibirapuera",
-            },
-            {
-              nome: "Pinacoteca de São Paulo",
-              imagem: "/imagens/conectasp_pinacoteca.png",
-              localizacao: "Luz, São Paulo",
-              endereco: "/locais/pinacoteca",
-            },
-            {
-              nome: "Museu da Inclusão",
-              imagem: "/imagens/conectasp_museudainclusao.png",
-              localizacao: "Zona Oeste",
-              endereco: "/locais/museu-da-inclusao",
-            },
-            {
-              nome: "Centro Cultural Banco do Brasil São Paulo",
-              imagem: "/imagens/conectasp_ccbb.png",
-              localizacao: "Centro",
-              endereco: "/locais/ccbb",
-            },
-            {
-              nome: "Centro Cultural São Paulo",
-              imagem: "/imagens/conectasp_centrosp.png",
-              localizacao: "Zona Sul",
-              endereco: "/locais/centro-cultural-sp",
-            },
-          ].map((ponto) => (
-            <CardPonto
-              key={ponto.endereco}
-              imagem={ponto.imagem}
-              nome={ponto.nome}
-              localizacao={ponto.localizacao}
-              endereco={ponto.endereco}
-            />
-          ))}
-        </section>
+        <ListaPontos />
+        
       </main>
 
       <footer className={styles.rodape}>
