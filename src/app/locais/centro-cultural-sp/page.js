@@ -3,7 +3,6 @@
 import Link from "next/link";
 import styles from "@/styles/Local.module.css";
 import RecursosAcessibilidade from "../../componentes/RecursoAcessibilidade";
-import ListaPontos from "../componentes/ListaPontos";
 
 export const metadata = {
   title: "Centro Cultural São Paulo - ConectaSP",

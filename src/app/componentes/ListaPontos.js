@@ -1,19 +1,29 @@
+
 "use client";
 
 import { useEffect, useState } from "react";
 import CardPonto from "./CardPonto";
 import styles from "@/styles/Pontos.module.css";
 
-
 export default function ListaPontos() {
   const [pontos, setPontos] = useState([]);
 
   useEffect(() => {
     async function buscarPontos() {
-      const resposta = await fetch("/api/locais");
-      const dados = await resposta.json();
+      try {
+        const resposta = await fetch("/api/locais", {
+          method: "GET",
+        });
 
-      setPontos(dados);
+        if (!resposta.ok) {
+          throw new Error("Erro ao buscar os pontos turísticos");
+        }
+
+        const dados = await resposta.json();
+        setPontos(dados);
+      } catch (erro) {
+        console.error(erro);
+      }
     }
 
     buscarPontos();

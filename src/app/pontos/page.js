@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import styles from "@/styles/Pontos.module.css"; 
-import CardPonto from "../componentes/CardPonto";
+import ListaPontos from "../componentes/ListaPontos";
 
 export const metadata = {
   title: "Pontos Turísticos Acessíveis - ConectaSP",
