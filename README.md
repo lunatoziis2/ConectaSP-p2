@@ -111,7 +111,7 @@ npm run dev
 http://localhost:3000
 ```
 
-## 9. Utilização de Inteligência Artificial
+## 7. Utilização de Inteligência Artificial
 
 Durante o desenvolvimento, foi utilizado o ChatGPT e Claude como ferramenta de apoio ao aprendizado e à programação.
 
